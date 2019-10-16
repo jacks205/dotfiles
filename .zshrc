@@ -1,12 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/bin:$PATH;
 export PATH=$HOME/bin:$PATH;
+export PATH=$HOME/.bin:$PATH;
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin";
 export PATH=/usr/local/share/npm/bin:$PATH;
 
 export PATH="$HOME/.fastlane/bin:$PATH";
 export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
-export PATH="$HOME/.bin/flutter/bin:$PATH"
 
 # matches case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -134,20 +134,19 @@ if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='mvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Path to dotfiles repo
+# export DOTFILES="$(dirname "$(readlink "$HOME/.zshrc")")"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# # Find all zsh files
+# configs=($DOTFILES/*/*.bash $DOTFILES/*/*.zsh)
+# for file in ${configs:#*/completions.zsh}
+# do
+#   source "$file"
+# done
+
 
 fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
-alias dotfiles='/usr/bin/git --git-dir=/Users/ianjackson/.cfg/ --work-tree=/Users/ianjackson'
+alias dotfiles='/usr/bin/git --git-dir=/Users/ianjackson/.dotfiles/ --work-tree=/Users/ianjackson'
