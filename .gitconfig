@@ -1,0 +1,144 @@
+[user]
+	name = Ian Jackson
+	email = ian@acorns.com
+	signingkey = 8A29DC67D1B9A7A5
+[github]
+  user = jacks205
+[commit]
+  template = ~/.gitmessage
+[credential]
+	helper = osxkeychain
+[hub]
+  protocol = https
+[core]
+  pager = less -FRSX
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  editor = vim -f
+	autocrlf = false
+	safecrlf = false
+	excludesfile = /Users/ianjackson/.global_gitignore
+[advice]
+  statusHints = false
+[web]
+	browser = google-chrome
+[push]
+  config = default
+  default = tracking
+[rebase]
+  autosquash = true
+[merge]
+  summary = true
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+	ui = true
+  pager = true
+[color "branch"]
+  current = cyan bold
+  local   = yellow bold
+  remote  = green bold
+[color "diff"]
+  meta = cyan bold
+  frag = magenta bold
+  old  = red bold
+  new  = green bold
+  whitespace = red reverse
+[color "whatchanged"]
+  meta = cyan bold
+  frag = magenta bold
+  old  = red bold
+  new  = green bold
+  whitespace = red reverse
+[color "status"]
+  added = cyan bold
+  changed = green bold
+  untracked = red bold
+[alias]
+  aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+  a       = add -u
+  aa      = add --all :/
+  ap      = add -u -p
+  #############
+  b       = browse
+  #############
+  bam     = "!source ~/.githelpers && delete_local_merged_branches"
+  bamr    = "!source ~/.githelpers && delete_remote_merged_branches"
+  #############
+  c       = commit -v
+  ca	    = commit --amend
+  cae	    = commit --amend --no-edit
+  cm	    = commit -S -v -m 
+  #############
+  co      = checkout
+  cob     = checkout -b
+  #############
+	cp      = cherry-pick
+	cpa     = cherry-pick --abort
+	cpc     = cherry-pick --continue
+  #############
+  d       = diff
+  ds      = diff --staged
+  dw      = diff --color-words
+  #############
+  last    = "!git --no-pager log --graph --pretty=format:'%C(bold cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n 10"
+  #############
+  po      = push origin head
+  pr      = "!f() { git fetch origin refs/pull/$1/head:ian/$1 && git co ian/$1; } ; f"
+  #############
+  r       = reset
+  r1      = reset HEAD^
+  r2      = reset HEAD^^
+  rh      = reset --hard
+  rh1     = reset HEAD^ --hard
+  rh2     = reset HEAD^^ --hard
+  #############
+  rb      = rebase
+  rbc     = rebase --continue
+  rba     = rebase --abort
+  rbi     = rebase -i
+  #############
+  s       = status -s -b
+  #############
+  sm      = submodule
+  smu     = submodule foreach git pull origin master
+  #############
+  summary = "!source ~/.githelpers && weekly_summary"
+  #############
+  mc      = merge --continue
+  td      = merge --no-ff
+  #############
+  p       = pull
+  #############
+  up      = "!git fetch origin && git rebase origin/master"
+  #############
+  w       = whatchanged --decorate
+  wp      = whatchanged --decorate -p
+  wtf     = "!git fetch --multiple production origin && git log production/master..origin/master"
+  #############
+  l = log --pretty='format:%C(bold cyan)%h %C(yellow)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(bold cyan)%ar' --date=short
+  lg = log --pretty='format:%C(bold cyan)%h %C(yellow)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(bold cyan)%ar' --date=short --oneline --graph --decorate
+  #############
+  branches  = branch -a
+  #############
+  pub       = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  pubfl     = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\" --force-with-lease"
+  #############
+  uu        = "!git fetch origin && git rebase origin/master"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[diff]
+	colorMoved = zebra
+  prompt = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pull]
+	rebase = true

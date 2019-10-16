@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/ianjackson/Development/Mobile-IOS/Acorns'
+let g:netrw_dirhist_2='/Users/ianjackson/Development/Mobile-IOS'
+let g:netrw_dirhist_3='/Users/ianjackson/Development/Mobile-IOS/Acorns/AcornsAnalytics'
+let g:netrw_dirhist_4='/Users/ianjackson/Development/Mobile-IOS/Acorns'
+let g:netrw_dirhist_5='/Users/ianjackson/Development/Mobile-IOS/Acorns/AcornsAnalytics/AcornsAnalytics'
+let g:netrw_dirhist_6='/Users/ianjackson/Development/Mobile-IOS'
+let g:netrw_dirhist_7='/Users/ianjackson/Development/Mobile-IOS/Acorns'
+let g:netrw_dirhist_8='/Users/ianjackson/Development/Mobile-IOS/Acorns/AcornsAnalytics'
+let g:netrw_dirhist_9='/Users/ianjackson/Development/Mobile-IOS/Acorns/AcornsAnalytics/AcornsAnalytics'
