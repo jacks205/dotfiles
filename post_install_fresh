@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Node 
+nvm install node        # install most recent Node stable version
+nvm use node            # use stable as current version
+nvm alias default node  # set the installed stable version as the default Node
+
+# Python
+pyenv install 2.7.18
+pyenv install 3.8.5
+pyenv global 3.8.5 2.7.18
+pyenv rehash
+
+# Ruby
+rbenv install 2.7.1
+sudo gem install bundler
+sudo gem install cocoapods
+sudo gem install fastlane

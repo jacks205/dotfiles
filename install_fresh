@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if ! command -v brew &> /dev/null
+then
+  # Install Homebrew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+
+# Setup Terminal
+brew cask install iterm2
+brew install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+brew install zsh-completions
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+brew install zplug
+zplug "momo-lab/zsh-abbrev-alias"
+zplug install
+
+brew install git
+brew install ack
+brew install bash-completion
+brew install tree
+
+# Vim
+brew install vim
+git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+# VSCode
+brew cask install visual-studio-code
+
+# Slack
+brew cask install slack
+
+# Github CLI
+brew install gh
+
+# Node 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install node        # install most recent Node stable version
+nvm ls                  # list installed Node version
+nvm use node            # use stable as current version
+nvm alias default node  # set the installed stable version as the default Node
+
+# Python
+brew install pyenv
+
+# Ruby
+brew install rbenv ruby-build
+
+/bin/bash -c ./install
+
+# Setup git
+git config --global core.excludesfile ~/.gitignore
+
+/bin/bash -c ./macos
+
+source ~/.zshrc
+
+/bin/bash -c ./post_install_fresh

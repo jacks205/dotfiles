@@ -1,6 +1,24 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
-    ~/.zshrc: zshrc
+    ~/.aliases:
+    ~/.gitconfig: 
+    ~/.gitignore: 
+    ~/.gitmessage:
+    ~/.githelpers:
+    ~/.gittemplates:
+    ~/.lldbinit:
+    ~/.lldbhelpers:
+    ~/.zshrc: 
 
-
+- create:
+    - ~/Development
+    
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+#   - [cp gittemplates -af ~/.gittemplates, Copying gittemplates folder]
+#   - [cp lldbhelpers -af ~/.lldbhelpers, Copying lldbhelpers folder]
