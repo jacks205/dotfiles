@@ -6,11 +6,13 @@
 
 - link:
     ~/.aliases:
+    ~/.bash_prompt:
     ~/.gitconfig: 
     ~/.gitignore: 
     ~/.gitmessage:
     ~/.githelpers:
     ~/.gittemplates:
+    ~/.p10k.zsh:
     ~/.lldbinit:
     ~/.lldbhelpers:
     ~/.zshrc: 

@@ -11,13 +11,14 @@ brew cask install iterm2
 brew install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew install zsh-completions
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 brew install zplug
 zplug "momo-lab/zsh-abbrev-alias"
 zplug install
 
 brew install git
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 brew install ack
 brew install bash-completion
 brew install tree
