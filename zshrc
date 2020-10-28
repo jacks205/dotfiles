@@ -8,6 +8,8 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export ZSH_DISABLE_COMPFIX="true"
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ian/.oh-my-zsh"
 
@@ -119,6 +121,8 @@ fi
 
 # Pyenv
 eval "$(pyenv init -)"
+
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -145,3 +149,27 @@ source $ZPLUG_HOME/init.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Android Paths
+export ANT_HOME=/usr/local/opt/ant
+export MAVEN_HOME=/usr/local/opt/maven
+export GRADLE_HOME=/usr/local/opt/gradle
+export ANDROID_HOME=/usr/local/share/android-sdk
+export ANDROID_NDK_HOME=/usr/local/share/android-ndk
+
+# Android 
+export PATH=$ANT_HOME/bin:$PATH
+export PATH=$MAVEN_HOME/bin:$PATH
+export PATH=$GRADLE_HOME/bin:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
+
+#Flutter
+export PATH=$HOME/Development/flutter/bin:$PATH
+
+# MySQL
+export PATH=/usr/local/mysql/bin:$PATH
+
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"

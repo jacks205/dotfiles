@@ -16,7 +16,12 @@ brew install zplug
 zplug "momo-lab/zsh-abbrev-alias"
 zplug install
 
-brew install git
+if ! command -v git &> /dev/null
+then
+  brew install git
+else
+  brew upgrade git
+fi
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 brew install ack

@@ -12,7 +12,7 @@
 [hub]
   protocol = ssh
 [core]
-  pager = less -FRSX
+  pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   editor = vim -f
   autocrlf = false
@@ -39,17 +39,18 @@
   status = auto
   branch = auto
   interactive = auto
-	ui = true
+	ui = always
   pager = true
 [color "branch"]
   current = cyan bold
   local   = yellow bold
   remote  = green bold
 [color "diff"]
-  meta = cyan bold
-  frag = magenta bold
-  old  = red bold
-  new  = green bold
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
   whitespace = red reverse
 [color "whatchanged"]
   meta = cyan bold
@@ -61,6 +62,11 @@
   added = cyan bold
   changed = green bold
   untracked = red bold
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [alias]
   aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
   a       = add -u
@@ -154,7 +160,5 @@
 	rebase = true
 [stash]
   showPatch = true
-[interactive]
-  diffFilter = diff-highlight
 [branch "master"]
   pushRemote = NOPE
