@@ -25,8 +25,6 @@ brew install tree
 
 # Vim
 brew install vim
-git clone https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # VSCode
 brew cask install visual-studio-code
@@ -49,6 +47,9 @@ brew install pyenv
 
 # Ruby
 brew install rbenv ruby-build
+
+# CMake
+brew install cmake
 
 /bin/bash -c ./install
 

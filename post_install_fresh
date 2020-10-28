@@ -16,3 +16,6 @@ rbenv install 2.7.1
 sudo gem install bundler
 sudo gem install cocoapods
 sudo gem install fastlane
+
+# Vim
+sh ./.vim_runtime/install_awesome_vimrc.sh
