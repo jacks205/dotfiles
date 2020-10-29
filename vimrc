@@ -21,8 +21,13 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
+" Themes
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arzg/vim-colors-xcode'
+
+" Helpers
+
+Plug 'tpope/vim-sensible'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
@@ -30,6 +35,17 @@ Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'git@github.com:ycm-core/YouCompleteMe.git'
 Plug 'mbbill/undotree'
 Plug 'vim-syntastic/syntastic'
+
+" Javascript
+
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jiangmiao/auto-pairs'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'w0rp/ale'
+
+" Swift
 " Plug 'keith/swift.vim'
 Plug 'jph00/swift-apple'
 
@@ -50,6 +66,8 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 let g:ctrlp_use_caching = 0
+
+let g:ycm_server_python_interpreter = '/Users/markjackson/.pyenv/versions/3.8.5/bin/python'
 
 " Syntastic
 
@@ -72,3 +90,10 @@ let g:signify_sign_delete = '•'
 
 let g:signify_sign_show_count = 0 " Don’t show the number of deleted lines.
 
+" Javascript
+" au FileType javascript setlocal formatprg=prettier
+" au FileType javascript.jsx setlocal formatprg=prettier
+" au FileType typescript setlocal formatprg=prettier\ - parser\ typescript
+
+let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['prettier', 'tslint'], 'scss': ['prettier'], 'html': ['prettier'], 'reason': ['refmt'] }
