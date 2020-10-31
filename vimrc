@@ -16,7 +16,11 @@ set incsearch
 set backspace=indent,eol,start
 set termguicolors
 
-set colorcolumn=120
+set wildmenu
+set wildignore+=**/Pods/**
+set hidden
+
+set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
@@ -31,6 +35,7 @@ Plug 'tpope/vim-sensible'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
+Plug 'scrooloose/nerdtree'
 Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'git@github.com:ycm-core/YouCompleteMe.git'
 Plug 'mbbill/undotree'
@@ -97,3 +102,21 @@ let g:signify_sign_show_count = 0 " Don’t show the number of deleted lines.
 
 let g:ale_linters = { 'javascript': ['eslint'] }
 let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['prettier', 'tslint'], 'scss': ['prettier'], 'html': ['prettier'], 'reason': ['refmt'] }
+
+" Fugitive Conflict Resolution
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //3<CR>
+
+" Remaps
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
+nmap <leader>pf :CtrlP<CR>
+" nnoremap <Leader>gd :GoDef<Enter>
+nnoremap <Leader>pt :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
+nnoremap <silent> <Leader>vr :vertical resize 30<CR>
+nnoremap <silent> <Leader>r+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>r- :vertical resize -5<CR>
