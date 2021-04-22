@@ -173,3 +173,6 @@ export PATH=/usr/local/mysql/bin:$PATH
 
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+# GPG
+export GPG_TTY=$(tty)
