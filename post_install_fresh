@@ -19,3 +19,9 @@ sudo gem install fastlane
 
 # Vim
 sh ./.vim_runtime/install_awesome_vimrc.sh
+
+zplug "momo-lab/zsh-abbrev-alias"
+zplug install
+
+# Android
+brew install --cask android-studio

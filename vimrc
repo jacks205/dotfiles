@@ -72,7 +72,7 @@ let g:netrw_winsize = 25
 
 let g:ctrlp_use_caching = 0
 
-let g:ycm_server_python_interpreter = '/Users/markjackson/.pyenv/versions/3.8.5/bin/python'
+let g:ycm_server_python_interpreter = '/Users/ian/.pyenv/versions/3.8.5/bin/python'
 
 " Syntastic
 

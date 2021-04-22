@@ -1,68 +1,74 @@
 #!/bin/bash
 
-if ! command -v brew &> /dev/null
-then
-  # Install Homebrew
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
+# if ! command -v git &> /dev/null
+# then
+#   brew upgrade git
+# else
+#   brew install git
+#   git config advice.ignoredHook false
+# fi
+
+# if ! command -v brew &> /dev/null
+# then
+#   # Install Homebrew
+#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# else 
+#   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ian/.zprofile
+#   eval "$(/opt/homebrew/bin/brew shellenv)"
+# fi
 
 # Setup Terminal
-brew cask install iterm2
-brew install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-brew install zsh-completions
+# brew install --cask iterm2
+# rm -r /Users/ian/.oh-my-zsh
+# brew install zsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# brew install zsh-completions
 
-brew install zplug
-zplug "momo-lab/zsh-abbrev-alias"
-zplug install
+# brew install zplug
 
-if ! command -v git &> /dev/null
-then
-  brew install git
-else
-  brew upgrade git
-fi
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-brew install ack
-brew install bash-completion
-brew install tree
+# brew install ack
+# brew install bash-completion
+# brew install tree
 
-# Vim
-brew install vim
+# # Vim
+# brew install vim
 
-# VSCode
-brew cask install visual-studio-code
+# # VSCode
+# brew install --cask visual-studio-code
 
-# Slack
-brew cask install slack
+# # Slack
+# brew install --cask slack
 
-# Github CLI
-brew install gh
+# # Github CLI
+# brew install gh
 
-# Node 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-nvm install node        # install most recent Node stable version
-nvm ls                  # list installed Node version
-nvm use node            # use stable as current version
-nvm alias default node  # set the installed stable version as the default Node
+# # Discord
+# brew install --cask discord
 
-# Python
-brew install pyenv
+# # Node 
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Ruby
-brew install rbenv ruby-build
+# # Python
+# brew install pyenv
 
-# CMake
-brew install cmake
+# # Ruby
+# brew install rbenv ruby-build
 
-/bin/bash -c ./install
+# # CMake
+# brew install cmake
 
-# Setup git
-git config --global core.excludesfile ~/.gitignore
+# /bin/bash -c ./install
 
-/bin/bash -c ./macos
+# # Setup git
+# git config --global core.excludesfile ~/.gitignore
 
-source ~/.zshrc
+# /bin/bash -c ./macos
 
-/bin/bash -c ./post_install_fresh
+# source ~/.zshrc
+
+# /bin/bash -c ./post_install_fresh

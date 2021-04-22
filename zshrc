@@ -116,7 +116,7 @@ if type brew &>/dev/null; then
     rm -f ~/.zcompdump; compinit
 fi
 # Load Git completion
-# zstyle ':completion:*:*:git:*' script ~/.gitcompletions/git-completion.bash
+zstyle ':completion:*:*:git:*' script ~/.gitcompletions/git-completion.bash
 
 
 # Pyenv
@@ -141,11 +141,11 @@ done;
 unset file;
 
 # zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
 
 
-# autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
